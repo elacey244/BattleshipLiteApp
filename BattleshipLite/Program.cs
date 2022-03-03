@@ -104,7 +104,7 @@ namespace BattleshipLite
         }
 
         private static void DisplayShotGrid(PlayerInfoModel activePlayer)
-        {//possibly rewrite this to make it look better
+        {
             string currentRow = activePlayer.ShotGrid[0].SpotLetter;
 
             foreach (var gridSpot in activePlayer.ShotGrid)
@@ -150,16 +150,12 @@ namespace BattleshipLite
 
             Console.WriteLine($"Player information for { playerTitle }");
 
-            // Ask the user for their name
             output.UsersName = AskForUsersName();
 
-            // Load up the shot grid
             GameLogic.InintializeGrid(output);
 
-            // Ask the user for their 5 ship placements
             PlaceShips(output);
 
-            // Clear
             Console.Clear();
 
             return output;
